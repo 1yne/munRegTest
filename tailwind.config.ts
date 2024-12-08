@@ -56,7 +56,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans],
-				nexusbold: 'Nexusbold'
+				nexusbold: 'Nexusbold',
+				mortend: "Mortend"
 			}
 		}
 	},
