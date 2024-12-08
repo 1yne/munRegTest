@@ -4,10 +4,10 @@
 	let splitText = text.split('');
 </script>
 
-<div class="cursor-default splitText">
+<div class="cursor-default">
 	{#each splitText as textChar, i}
 		<span
-			class="font-nexusbold text-[40rem] leading-none opacity-0"
+			class="font-nexusbold text-[8rem] leading-none opacity-0"
 			style={`animation-delay: ${1000 + i * 100}ms`}>{textChar}</span
 		>
 	{/each}
@@ -26,24 +26,8 @@
 		}
 	}
 
-	@keyframes scale-text-down {
-		0% {
-			scale: 1;
-		}
-
-		100% {
-			scale: 0;
-      display: none;
-		}
-	}
-
 	span {
 		animation: move-text 0.5s forwards;
 		position: relative; /* <- can be commented out to make this effect a fade-in */
 	}
-  
-  .splitText {
-    animation: scale-text-down 0.5s forwards;
-    animation-delay: 3500ms;
-  }
 </style>
