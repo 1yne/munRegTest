@@ -1,47 +1,34 @@
 <script lang="ts">
 	import SplitText from '$lib/components/SplitText.svelte';
 	import { onMount } from 'svelte';
+	import { transitions } from '$lib/transitions';
 
 	let loading: boolean;
 
 	onMount(() => {
 		loading = true;
-		let durations = [1000, 2000, 3000, 4000];
-		let randAnimDur = durations[Math.floor(Math.random() * durations.length)];
 		setTimeout(() => {
 			loading = false;
-		}, randAnimDur);
+			transitions()
+		}, 1500);
 	});
 </script>
 
 <div class={`flex h-screen w-full ${loading ? 'items-end' : 'items-center justify-center'}`}>
-	{#if loading}
-		<div class="p-12">
-			<h1 class="loading font-mortend">Loading</h1>
-		</div>
-	{:else}
-		<div class="heroText">
-			<SplitText text="RoMUN 2025" />
-		</div>
-	{/if}
+	<div class="heroText px-4 rounded-lg">
+		{#if loading}
+			<div class="p-12">
+				<h1 class="loading font-mortend">Loading</h1>
+			</div>
+		{:else}
+			<div>
+				<SplitText text="RoMUN 2025" />
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style>
-	@keyframes afterScale {
-		0% {
-			scale: 1;
-		}
-
-		100% {
-			scale: 4;
-		}
-	}
-
-	.heroText {
-		animation: afterScale 0.5s forwards;
-		animation-delay: 2750ms;
-	}
-
 	.loading:after {
 		overflow: hidden;
 		display: inline-block;
