@@ -6,6 +6,12 @@ const config: Config = {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	safelist: ["dark"],
 	theme: {
+		screens: {
+			mobile: {
+				max: '645px'
+			},
+			desktop: '845px'
+		},
 		container: {
 			center: true,
 			padding: "2rem",

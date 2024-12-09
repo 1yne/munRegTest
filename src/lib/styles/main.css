@@ -1,0 +1,46 @@
+/* Loading component */
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: '\2026';
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+/* ------------------------------------------------------- */
+
+/* SplitText component */
+
+@keyframes move-text {
+	0% {
+		bottom: -0.3em;
+		opacity: 0;
+	}
+
+	100% {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+
+.splitText {
+	animation: move-text 0.5s forwards;
+	position: relative; 
+}
+
+/* ------------------------------------------------------- */
