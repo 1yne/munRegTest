@@ -1,5 +1,4 @@
 <script>
-	import Search from 'carbon-icons-svelte/lib/Search.svelte';
 	import { fade } from 'svelte/transition';
 
 	const links = [
@@ -10,10 +9,6 @@
 		{
 			link: '/register',
 			name: 'Register'
-		},
-		{
-			link: '/register',
-			name: Search
 		}
 	];
 </script>
@@ -26,12 +21,7 @@
 		<a
 			href={link.link}
 			class="transition-all hover:text-white"
-			in:fade|global={{ duration: 250, delay: i * 500 }}
-			>{#if typeof link.name == 'string'}
-				{link.name}
-			{:else}
-				<svelte:component this={link.name} />
-			{/if}</a
+			in:fade|global={{ duration: 250, delay: i * 500 }}>{link.name}</a
 		>
 	{/each}
 </div>

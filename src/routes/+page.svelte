@@ -2,6 +2,7 @@
 	import SplitText from '$lib/components/SplitText.svelte';
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { transitions } from '$lib/transitions';
 
@@ -33,5 +34,6 @@
 				</div>
 			</div>
 		</div>
+		<Footer />
 	{/if}
 </div>
