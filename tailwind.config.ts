@@ -63,7 +63,8 @@ const config: Config = {
 			fontFamily: {
 				sans: [...fontFamily.sans],
 				nexusbold: 'Nexusbold',
-				mortend: "Mortend"
+				mortend: "Mortend",
+				montserrat: "Montserrat"
 			}
 		}
 	},
