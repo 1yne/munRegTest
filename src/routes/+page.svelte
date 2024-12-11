@@ -5,6 +5,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { transitions } from '$lib/transitions';
+	import { fade } from 'svelte/transition';
 
 	let loading: boolean;
 
@@ -34,6 +35,8 @@
 				</div>
 			</div>
 		</div>
-		<Footer />
+		<div in:fade|global={{ duration: 250, delay: 500 }}>
+			<Footer />
+		</div>
 	{/if}
 </div>

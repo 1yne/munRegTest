@@ -21,7 +21,7 @@
 		<a
 			href={link.link}
 			class="transition-all hover:text-white"
-			in:fade|global={{ duration: 250, delay: i * 500 }}>{link.name}</a
+			in:fade|global={{ duration: 250, delay: i * 250 }}>{link.name}</a
 		>
 	{/each}
 </div>
