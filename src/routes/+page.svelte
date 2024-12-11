@@ -24,18 +24,20 @@
 			<Loading />
 		</div>
 	{:else}
-		<Navbar />
-		<div class={`h-full w-full px-3 pt-16`}>
-			<div class="heroText rounded-sm px-4">
-				<div class="text-[#D60202]">
-					<SplitText text="RoMUN" />
-					<div class="flex justify-end">
-						<SplitText text="2025" />
+		<div class="content">
+			<div class="contentWrapper transition-all duration-1000">
+				<Navbar />
+				<div class={`h-full w-full px-3 pt-16`}>
+					<div class="heroText rounded-sm px-4">
+						<div class="text-[#D60202]">
+							<SplitText text="RoMUN" />
+							<div class="flex justify-end">
+								<SplitText text="2025" />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div in:fade|global={{ duration: 250, delay: 500 }}>
 			<Footer />
 		</div>
 	{/if}

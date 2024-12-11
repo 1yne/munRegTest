@@ -4,6 +4,18 @@
 	import '$lib/styles/mediaQueries.css'
 	import { ModeWatcher } from "mode-watcher";
 	let { children } = $props();
+	import { onNavigate } from '$app/navigation';
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <ModeWatcher />
