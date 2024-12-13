@@ -15,7 +15,7 @@
 
 <div
 	transition:fade={{ duration: 5 }}
-	class="flex w-full items-center justify-center gap-12 py-8 font-montserrat font-light uppercase tracking-[0.2em] text-white/50"
+	class="flex w-full items-center justify-center gap-12 py-8 font-montserrat font-light uppercase tracking-[0.2em] text-white/50 mobile:px-6 mobile:justify-between"
 >
 	{#each links as link, i}
 		<a

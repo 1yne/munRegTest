@@ -20,18 +20,20 @@
 
 <div class="h-screen w-full">
 	{#if loading}
-		<div class={`flex h-full w-full items-end p-12 mobile:p-6`}>
+		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}>
 			<Loading />
 		</div>
 	{:else}
 		<div class="content">
 			<div class="contentWrapper transition-all duration-1000">
 				<Navbar />
-				<div class={`h-full w-full px-3 pt-16`}>
-					<div class="heroText rounded-sm px-4">
+				<div class={`h-full w-full px-12 pt-16 mobile:px-6`}>
+					<div class="heroText rounded-sm">
 						<div class="text-[#D60202]">
-							<SplitText text="RoMUN" />
-							<div class="flex justify-end">
+							<div class="mobile:w-full mobile:flex mobile:justify-center">
+								<SplitText text="RoMUN" />
+							</div>
+							<div class="flex justify-end mobile:w-full mobile:justify-center">
 								<SplitText text="2025" />
 							</div>
 						</div>

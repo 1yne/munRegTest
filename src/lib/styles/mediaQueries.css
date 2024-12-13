@@ -1,0 +1,8 @@
+@media (max-width: 645px) {
+	.splitText.main {
+		font-size: calc((100vw - 3.3rem) / 5);
+	}
+	.splitText.side {
+		font-size: calc((100vw - 3rem) / 3.5);
+	}
+}
