@@ -18,7 +18,7 @@
 	});
 </script>
 
-<div class="h-screen w-full">
+<div class="h-screen w-full bg-[url('/BG.png')] bg-cover">
 	{#if loading}
 		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}>
 			<Loading />
@@ -29,7 +29,7 @@
 				<Navbar />
 				<div class={`h-full w-full px-12 pt-16 mobile:px-6`}>
 					<div class="heroText rounded-sm">
-						<div class="text-[#D60202]">
+						<div class="text-white">
 							<div class="mobile:w-full mobile:flex mobile:justify-center">
 								<SplitText text="RoMUN" />
 							</div>
