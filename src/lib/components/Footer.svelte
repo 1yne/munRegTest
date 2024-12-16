@@ -2,6 +2,6 @@
 	import Search from "./Search.svelte";
 </script>
 
-<div class={`footer fixed bottom-0 flex w-full justify-center py-8 ${active ? '' : ''}`}>
+<div class="footer fixed bottom-0 flex w-full justify-center py-8 z-[100]">
 	<Search />
-</div>\
+</div>

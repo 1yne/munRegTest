@@ -5,7 +5,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { transitions } from '$lib/transitions';
-	import { fade } from 'svelte/transition';
+	import { store as searchStore } from '$lib/stores/store';
 
 	let loading: boolean;
 
@@ -39,6 +39,10 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class={`absolute p-12 pb-0 flex justify-between w-full font-montserrat bottom-[3rem] items-center transition-all duration-1000 ${$searchStore.searchActive ? 'blur-[8px]' : ''}`}>
+				<h1 class="uppercase">24-25 October 2025</h1>
+				<h1 class="uppercase">1yne</h1>
 			</div>
 			<Footer />
 		</div>
