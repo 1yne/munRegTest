@@ -6,13 +6,15 @@
 	import { onMount } from 'svelte';
 	import { transitions } from '$lib/transitions';
 	import { store as searchStore } from '$lib/stores/store';
+	import { fly } from 'svelte/transition';
 
-	let loading: boolean;
+	let loading: boolean, animate = false;
 
 	onMount(() => {
 		loading = true;
 		setTimeout(() => {
 			loading = false;
+			animate = true
 			transitions();
 		}, 1500);
 	});
@@ -41,8 +43,10 @@
 				</div>
 			</div>
 			<div class={`absolute p-12 pb-0 flex justify-between w-full font-montserrat bottom-[3rem] items-center transition-all duration-1000 ${$searchStore.searchActive ? 'blur-[8px]' : ''}`}>
-				<h1 class="uppercase">24-25 October 2025</h1>
-				<h1 class="uppercase">1yne</h1>
+				{#if animate}
+					<h1 class="uppercase" in:fly|global={{ y: 10, duration: 500 }}>24-25 October 2025</h1>
+					<h1  in:fly|global={{ y: 10, duration: 500, delay: 500 }}>@romun_24</h1>
+				{/if}
 			</div>
 			<Footer />
 		</div>
