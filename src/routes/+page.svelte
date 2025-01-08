@@ -45,7 +45,7 @@
 			<div class={`absolute p-12 pb-0 flex justify-between w-full font-montserrat bottom-[3rem] items-center transition-all duration-1000 ${$searchStore.searchActive ? 'blur-[8px]' : ''}`}>
 				{#if animate}
 					<h1 class="uppercase" in:fly|global={{ y: 10, duration: 500 }}>24-25 October 2025</h1>
-					<h1  in:fly|global={{ y: 10, duration: 500, delay: 500 }}>@romun_24</h1>
+					<a href="https://www.instagram.com/romun_24/" in:fly|global={{ y: 10, duration: 500, delay: 500 }} class="text-white/50 hover:text-white transition-all">@romun_24</a>
 				{/if}
 			</div>
 			<Footer />
