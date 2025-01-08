@@ -1,25 +1,25 @@
 /* Loading component */
 
 .loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
-  animation: ellipsis steps(4, end) 900ms infinite;
-  content: '\2026';
-  width: 0px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+	-webkit-animation: ellipsis steps(4, end) 900ms infinite;
+	animation: ellipsis steps(4, end) 900ms infinite;
+	content: '\2026';
+	width: 0px;
 }
 
 @keyframes ellipsis {
-  to {
-    width: 1.25em;
-  }
+	to {
+		width: 1.25em;
+	}
 }
 
 @-webkit-keyframes ellipsis {
-  to {
-    width: 1.25em;
-  }
+	to {
+		width: 1.25em;
+	}
 }
 
 /* ------------------------------------------------------- */
@@ -40,15 +40,16 @@
 
 .splitText {
 	animation: move-text 0.5s forwards;
-	position: relative; 
+	position: relative;
 }
 
 /* ------------------------------------------------------- */
 
 /* Custom cursor */
 
-body, * {
-  cursor: url("cursor.png"), auto !important;
+body,
+* {
+	cursor: url('/cursor.png'), auto !important;
 }
 
 /* ------------------------------------------------------- */
@@ -56,59 +57,68 @@ body, * {
 /* Search component */
 
 .searchBorder:hover > svg {
-  color: white;
+	color: white;
 }
 
 @keyframes animateWidthIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 18rem;
-  }
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 18rem;
+	}
 }
 
 @keyframes animateWidthOut {
-  0% {
-    width: 18rem;
-  }
-  100% {
-    width: 0;
-  }
+	0% {
+		width: 18rem;
+	}
+	100% {
+		width: 0;
+	}
 }
 
 @keyframes animateHeightIn {
-  0% {
-    height: 3rem;
-  }
-  100% {
-    height: 18rem;
-  }
+	0% {
+		height: 3rem;
+	}
+	100% {
+		height: 18rem;
+	}
 }
 
 @keyframes animateHeightOut {
-  0% {
-    height: 18rem;
-  }
-  100% {
-    height: 3rem;
-  }
+	0% {
+		height: 18rem;
+	}
+	100% {
+		height: 3rem;
+	}
 }
-
 
 .searchInput:focus {
-  animation: animateWidthIn 0.25s forwards;
+	animation: animateWidthIn 0.25s forwards;
 }
 .searchInput:not(.searchInput:focus) {
-  animation: animateWidthOut 0.25s forwards;
+	animation: animateWidthOut 0.25s forwards;
 }
 .searchBorder:has(.searchInput:focus) {
-  animation: animateHeightIn 0.25s forwards;
+	animation: animateHeightIn 0.25s forwards;
 }
 .searchBorder:has(.searchInput:not(.searchInput:focus)) {
-  animation: animateHeightOut 0.25s forwards;
+	animation: animateHeightOut 0.25s forwards;
 }
 
 .content:has(.searchInput:focus) > .contentWrapper {
-  filter: blur(8px);
+	filter: blur(8px);
+}
+
+/* ------------------------------------------------------- */
+
+/* Grid background */
+
+.gridBG {
+	background-image: radial-gradient(circle, rgb(203, 213, 225, 0.2) 2px, transparent 2px);
+	background-size: 2.5rem 2rem;
+	background-position: center center;
 }
