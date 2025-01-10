@@ -24,27 +24,6 @@
 
 /* ------------------------------------------------------- */
 
-/* SplitText component */
-
-@keyframes move-text {
-	0% {
-		bottom: -0.3em;
-		opacity: 0;
-	}
-
-	100% {
-		bottom: 0;
-		opacity: 1;
-	}
-}
-
-.splitText {
-	animation: move-text 0.5s forwards;
-	position: relative;
-}
-
-/* ------------------------------------------------------- */
-
 /* Custom cursor */
 
 body,

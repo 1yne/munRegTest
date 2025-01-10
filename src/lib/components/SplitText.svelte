@@ -1,15 +1,26 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+
 	let { text } = $props();
 
 	let splitText = text.split('');
 	let delay = text == 'RoMUN' ? 1000 : 1500;
+	let animate = $state(false);
+
+	onMount(() => {
+		animate = true;
+	});
 </script>
 
-<div class="">
+<div>
 	{#each splitText as textChar, i}
-		<span
-			class={`splitText font-mortend text-[15vw] leading-none opacity-0 ${text == 'RoMUN' ? 'main' : 'side'}`}
-			style={`animation-delay: ${delay + i * 100}ms`}>{textChar}</span
-		>
+		{#if animate}
+			<span
+				transition:fly|global={{ y: 100, duration: 500, delay: delay + i * 100 }}
+				class={`font-mortend inline-block text-[15vw] leading-none ${text == 'RoMUN' ? 'main' : 'side'}`}
+				>{textChar}</span
+			>
+		{/if}
 	{/each}
 </div>
