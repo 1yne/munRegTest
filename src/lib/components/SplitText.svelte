@@ -17,7 +17,8 @@
 	{#each splitText as textChar, i}
 		{#if animate}
 			<span
-				transition:fly|global={{ y: 100, duration: 500, delay: delay + i * 100 }}
+				in:fly|global={{ y: 100, duration: 500, delay: delay + i * 100 }}
+				out:fly|global={{ y: -100, duration: 500, delay: i * 100 }}
 				class={`font-mortend inline-block text-[15vw] leading-none ${text == 'RoMUN' ? 'main' : 'side'}`}
 				>{textChar}</span
 			>
