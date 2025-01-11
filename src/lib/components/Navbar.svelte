@@ -20,7 +20,10 @@
 >
 	{#each links as link, i}
 		<button
-			on:click={() => $navigateStore.navigating = true}
+			on:click={() => {
+				$navigateStore.navigating = true
+				$navigateStore.navigateTo = link.link
+			}}
 			class="transition-all hover:text-white uppercase font-light text-white/50"
 			in:fade|global={{ duration: 250, delay: i * 250 }}>{link.name}</button
 		>

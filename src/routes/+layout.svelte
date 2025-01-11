@@ -5,6 +5,18 @@
 	import { ModeWatcher } from 'mode-watcher';
 	let { children } = $props();
 	import { onNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import Loading from '$lib/components/Loading.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+
+	let loading: boolean = $state(true);
+
+	onMount(() => {
+		setTimeout(() => {
+			loading = false;
+		}, 1500);
+	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -19,7 +31,25 @@
 </script>
 
 <ModeWatcher />
-{@render children()}
+<div class="h-screen w-full bg-[url('/BG.png')] bg-cover">
+	<div class="gridBG h-full w-full">
+		{#if loading}
+			<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}>
+				<Loading />
+			</div>
+		{:else}
+			<div class="content">
+				<div class="contentWrapper transition-all duration-1000">
+					<Navbar />
+					<div class="px-12 mobile:px-6">
+						{@render children()}
+					</div>
+					<Footer />
+				</div>
+			</div>
+		{/if}
+	</div>
+</div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
