@@ -55,7 +55,7 @@
 							<h1
 								class="flex h-12 items-center uppercase"
 								in:fly|global={{ y: 10, duration: 500 }}
-								out:fly|global={{ y: -10, duration: 500, delay: 750 }}
+								out:fly|global={{ y: -10, duration: 500, delay: 500 }}
 							>
 								24-25 October 2025
 							</h1>
