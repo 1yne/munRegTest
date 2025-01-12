@@ -1,0 +1,1 @@
+<h1 class="text-white text-8xl font-mortend">REGISTER</h1>
