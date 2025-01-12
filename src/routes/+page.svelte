@@ -26,17 +26,3 @@
 		</div>
 	{/if}
 </div>
-<div
-	class={`absolute bottom-[2rem] flex w-full items-center justify-between py-12 pb-0 font-montserrat transition-all duration-1000 ${$searchStore.searchActive ? 'blur-[8px]' : ''}`}
->
-	{#if !$navigateStore.navigating}
-		<h1
-			class="flex h-12 items-center uppercase"
-			in:fly|global={{ y: 10, duration: 500 }}
-			out:fly|global={{ y: -10, duration: 500, delay: 500 }}
-			onoutroend={() => goto($navigateStore.navigateTo)}
-		>
-			24-25 October 2025
-		</h1>
-	{/if}
-</div>

@@ -4,11 +4,14 @@
 	import '$lib/styles/mediaQueries.css';
 	import { ModeWatcher } from 'mode-watcher';
 	let { children } = $props();
-	import { onNavigate } from '$app/navigation';
+	import { onNavigate, goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { navigateStore } from '$lib/stores/navigateStore';
+	import { fly } from 'svelte/transition';
+	import { store as searchStore } from '$lib/stores/store';
 
 	let loading: boolean = $state(true);
 
@@ -44,8 +47,22 @@
 					<div class="px-12 mobile:px-6">
 						{@render children()}
 					</div>
-					<Footer />
 				</div>
+				<div
+					class={`absolute bottom-[2rem] flex w-full items-center justify-between px-12 font-montserrat transition-all duration-1000 ${$searchStore.searchActive ? 'blur-[8px]' : ''}`}
+				>
+					{#if !$navigateStore.navigating}
+						<h1
+							class="flex h-12 items-center uppercase"
+							in:fly|global={{ y: 10, duration: 500 }}
+							out:fly|global={{ y: -10, duration: 500, delay: 500 }}
+							onoutroend={() => goto($navigateStore.navigateTo)}
+						>
+							24-25 October 2025
+						</h1>
+					{/if}
+				</div>
+				<Footer />
 			</div>
 		{/if}
 	</div>
