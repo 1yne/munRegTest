@@ -19,7 +19,7 @@
 			<span
 				in:fly|global={{ y: 100, duration: 500, delay: delay + i * 100 }}
 				out:fly|global={{ y: -100, duration: 500, delay: i * 50 }}
-				class={`font-mortend inline-block text-[15vw] leading-none ${text == 'RoMUN' ? 'main' : 'side'}`}
+				class={`inline-block font-mortend text-[15vw] leading-none ${text == 'RoMUN' ? 'main' : 'side'}`}
 				>{textChar}</span
 			>
 		{/if}

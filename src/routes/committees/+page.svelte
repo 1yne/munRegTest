@@ -1,1 +1,1 @@
-<h1 class="text-white text-8xl font-mortend">COMMITTEES</h1>
+<h1 class="font-mortend text-8xl text-white">COMMITTEES</h1>

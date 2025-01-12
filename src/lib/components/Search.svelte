@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Search from 'carbon-icons-svelte/lib/Search.svelte';
-	import { store as searchStore } from "$lib/stores/store"
+	import { store as searchStore } from '$lib/stores/store';
 	let active = false;
 	let hover = false;
 
@@ -11,8 +11,8 @@
 
 <button
 	onclick={() => {
-		active = true
-		$searchStore.searchActive = true
+		active = true;
+		$searchStore.searchActive = true;
 	}}
 	onmouseenter={() => (hover = true)}
 	onmouseleave={() => (hover = false)}
@@ -24,10 +24,11 @@
 			<input
 				type="text"
 				use:focus
-				onfocusout={() => setTimeout(() => {
-					active = false
-					$searchStore.searchActive = false
-				}, 250)}
+				onfocusout={() =>
+					setTimeout(() => {
+						active = false;
+						$searchStore.searchActive = false;
+					}, 250)}
 				class={`searchInput bg-transparent font-montserrat text-white caret-[#D60202] transition-all focus:outline-none`}
 			/>
 		{/if}
