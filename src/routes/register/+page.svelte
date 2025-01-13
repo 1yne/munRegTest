@@ -1,1 +1,14 @@
-<h1 class="font-mortend text-8xl text-white">REGISTER</h1>
+<script>
+  import { page } from "$app/stores";
+  import SplitText from "$lib/components/SplitText.svelte";
+</script>
+
+<div class="wrapper">
+  <SplitText text="Register" />
+</div>
+
+<style>
+  :global(.wrapper > div > span) { 
+    font-size: 4rem !important; 
+  }
+</style>

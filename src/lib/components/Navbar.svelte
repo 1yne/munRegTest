@@ -25,7 +25,7 @@
 				$navigateStore.navigating = true;
 				$navigateStore.navigateTo = link.link;
 			}}
-			class={`font-light uppercase ${$page.route.id === link.link ? "text-white" : "text-white/50"} transition-all hover:text-white`}
+			class={`font-light uppercase ${$page.route.id?.includes(link.link) ? "text-white" : "text-white/50"} transition-all hover:text-white`}
 			in:fade|global={{ duration: 250, delay: i * 250 }}>{link.name}</button
 		>
 	{/each}

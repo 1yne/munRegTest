@@ -3,6 +3,7 @@
 	import { store as searchStore } from '$lib/stores/store';
 	import searchData, { type SearchData } from './searchData';
 	import { slide } from 'svelte/transition';
+	import { navigateStore } from '$lib/stores/navigateStore';
 
 	let active = $state(false),
 		hover = $state(false),
@@ -27,7 +28,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-	class="transition-all] flex flex-col rounded-3xl border border-white/50 hover:border-[#D60202]"
+	class="flex flex-col rounded-3xl border border-white/50 transition-all hover:border-[#D60202]"
 	onmouseenter={() => (hover = true)}
 	onmouseleave={() => (hover = false)}
 >
@@ -36,7 +37,17 @@
 			{#each searchResults as searchResult}
 				<button
 					transition:slide
-					class="flex w-full flex-col items-start border-b border-white/50 px-6 py-2"
+					class="flex w-full flex-col items-start border-b border-white/50 px-6 py-2 transition-all hover:bg-white/20"
+					onclick={() => {
+						active = false;
+						$searchStore.searchActive = false;
+						searchResults = [];
+						searchValue = '';
+						setTimeout(() => {
+							$navigateStore.navigating = true;
+							$navigateStore.navigateTo = searchResult.link;
+						}, 1000);
+					}}
 				>
 					<h1 class="text-xl font-black">{searchResult.name}</h1>
 					<p class="text-sm font-extralight">Lorem ipsum dolor sit amet consectetur.</p>
