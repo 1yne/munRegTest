@@ -57,35 +57,12 @@ body,
 	}
 }
 
-@keyframes animateHeightIn {
-	0% {
-		height: 3rem;
-	}
-	100% {
-		height: 18rem;
-	}
-}
-
-@keyframes animateHeightOut {
-	0% {
-		height: 18rem;
-	}
-	100% {
-		height: 3rem;
-	}
-}
-
 .searchInput:focus {
 	animation: animateWidthIn 0.25s forwards;
 }
 .searchInput:not(.searchInput:focus) {
 	animation: animateWidthOut 0.25s forwards;
-}
-.searchBorder:has(.searchInput:focus) {
-	animation: animateHeightIn 0.25s forwards;
-}
-.searchBorder:has(.searchInput:not(.searchInput:focus)) {
-	animation: animateHeightOut 0.25s forwards;
+	animation-delay: 2.5s;
 }
 
 .content:has(.searchInput:focus) > .contentWrapper {
