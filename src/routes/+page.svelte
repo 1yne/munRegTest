@@ -2,10 +2,7 @@
 	import SplitText from '$lib/components/SplitText.svelte';
 	import { onMount } from 'svelte';
 	import { transitions } from '$lib/transitions';
-	import { store as searchStore } from '$lib/stores/store';
 	import { navigateStore } from '$lib/stores/navigateStore';
-	import { fly } from 'svelte/transition';
-	import { goto } from '$app/navigation';
 
 	onMount(() => {
 		transitions();
