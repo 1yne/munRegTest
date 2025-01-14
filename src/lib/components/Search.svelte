@@ -39,14 +39,16 @@
 					transition:slide
 					class="flex w-full flex-col items-start border-b border-white/50 px-6 py-2 transition-all hover:bg-white/20"
 					onclick={() => {
-						active = false;
-						$searchStore.searchActive = false;
+						setTimeout(() => {
+							active = false;
+							$searchStore.searchActive = false;
+							setTimeout(() => {
+								$navigateStore.navigating = true;
+								$navigateStore.navigateTo = searchResult.link;
+							}, 500);
+						}, 500);
 						searchResults = [];
 						searchValue = '';
-						setTimeout(() => {
-							$navigateStore.navigating = true;
-							$navigateStore.navigateTo = searchResult.link;
-						}, 1000);
 					}}
 				>
 					<h1 class="text-xl font-black">{searchResult.name}</h1>
@@ -73,7 +75,7 @@
 					setTimeout(() => {
 						setTimeout(() => {
 							active = false;
-							$searchStore.searchActive = false;	
+							$searchStore.searchActive = false;
 						}, 500);
 						searchResults = [];
 						searchValue = '';
