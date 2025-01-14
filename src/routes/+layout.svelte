@@ -18,7 +18,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			loading = false;
-		}, 1500);
+		}, 3500);
 	});
 
 	onNavigate((navigation) => {
