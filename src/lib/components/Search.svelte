@@ -71,13 +71,15 @@
 				oninput={searchValues}
 				onfocusout={() => {
 					setTimeout(() => {
-						active = false;
-						$searchStore.searchActive = false;
+						setTimeout(() => {
+							active = false;
+							$searchStore.searchActive = false;	
+						}, 500);
 						searchResults = [];
 						searchValue = '';
 					}, 250);
 				}}
-				class="searchInput h-4 bg-transparent font-montserrat text-white caret-[#D60202] transition-all focus:outline-none"
+				class={`searchInput h-4 bg-transparent font-montserrat text-white caret-[#D60202] transition-all focus:outline-none ${active ? 'w-[18rem]' : ''}`}
 			/>
 		{/if}
 	</button>
