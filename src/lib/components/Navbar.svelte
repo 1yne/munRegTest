@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { navigateStore } from '$lib/stores/navigateStore';
 	import { page } from '$app/stores';
 	import ArrowLeft from "carbon-icons-svelte/lib/ArrowLeft.svelte"
@@ -27,7 +27,7 @@
 				$navigateStore.navigateTo = "/";
 			}}
 			class="font-light uppercase text-white/50 transition-all hover:text-white"
-			in:fade|global={{ duration: 250, delay: 250 }}><ArrowLeft size={24} /></button
+			in:fly|global={{ y: 40, duration: 750, delay: 250 }}><ArrowLeft size={24} /></button
 		>
 	{/if}
 	<div class="flex gap-12">
