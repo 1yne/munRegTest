@@ -2,7 +2,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import { navigateStore } from '$lib/stores/navigateStore';
 	import { page } from '$app/stores';
-	import ArrowLeft from "carbon-icons-svelte/lib/ArrowLeft.svelte"
+	import ArrowLeft from 'carbon-icons-svelte/lib/ArrowLeft.svelte';
 
 	const links = [
 		{
@@ -18,13 +18,13 @@
 
 <div
 	transition:fade={{ duration: 5 }}
-	class={`flex w-full items-center ${$page.route.id == '/' ? 'justify-center' : 'justify-between'} py-8 px-12 font-montserrat tracking-[0.2em] mobile:justify-between mobile:px-6`}
+	class={`flex w-full items-center ${$page.route.id == '/' ? 'justify-center' : 'justify-between'} px-12 py-8 font-montserrat tracking-[0.2em] mobile:justify-between mobile:px-6`}
 >
 	{#if $page.route.id != '/'}
 		<button
 			on:click={() => {
 				$navigateStore.navigating = true;
-				$navigateStore.navigateTo = "/";
+				$navigateStore.navigateTo = '/';
 			}}
 			class="font-light uppercase text-white/50 transition-all hover:text-white"
 			in:fly|global={{ y: 40, duration: 750, delay: 250 }}><ArrowLeft size={24} /></button

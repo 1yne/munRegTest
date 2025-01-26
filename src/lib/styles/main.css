@@ -62,7 +62,7 @@ body,
 }
 .searchInput:not(.searchInput:focus) {
 	animation: animateWidthOut 0.25s forwards;
-	animation-delay: .5s;
+	animation-delay: 0.5s;
 }
 
 .content:has(.searchInput:focus) > .contentWrapper {
