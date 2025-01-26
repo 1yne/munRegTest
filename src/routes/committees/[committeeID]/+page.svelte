@@ -1,11 +1,15 @@
 <script>
   import { page } from "$app/stores";
   import SplitText from "$lib/components/SplitText.svelte";
+  import { navigateStore } from '$lib/stores/navigateStore';
+
 </script>
 
-<div class="wrapper">
-  <SplitText text={$page.url.pathname.replace("/committees/", "")} />
-</div>
+{#if !$navigateStore.navigating}
+  <div class="wrapper">
+    <SplitText text={$page.url.pathname.replace("/committees/", "")} />
+  </div>
+{/if}
 
 <style>
   :global(.wrapper > div > span) { 

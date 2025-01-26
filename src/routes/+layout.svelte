@@ -4,7 +4,7 @@
 	import '$lib/styles/mediaQueries.css';
 	import { ModeWatcher } from 'mode-watcher';
 	let { children } = $props();
-	import { onNavigate, goto } from '$app/navigation';
+	import { onNavigate, goto, afterNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
@@ -30,6 +30,11 @@
 				await navigation.complete;
 			});
 		});
+	});
+
+	afterNavigate(() => {
+		$navigateStore.navigating = false;
+		$navigateStore.navigateTo = '';
 	});
 </script>
 
