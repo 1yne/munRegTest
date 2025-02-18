@@ -29,7 +29,7 @@
 </script>
 
 <ModeWatcher />
-<div class="h-screen w-full">
+<div class="h-screen w-full bg-offWhite">
 	{#if loading}
 		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}>
 			<Loading />
@@ -37,9 +37,7 @@
 	{:else}
 		<div class="content">
 			<Navbar />
-			<div class="px-12 mobile:px-6">
-				{@render children()}
-			</div>
+			{@render children()}
 		</div>
 	{/if}
 </div>

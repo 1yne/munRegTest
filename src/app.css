@@ -86,3 +86,8 @@
 	font-family: Mortend;
 	src: url('/fonts/Mortend/Mortend Bold.ttf');
 }
+
+@font-face {
+	font-family: NyghtSerif;
+	src: url('/fonts/Nyght Serif/Nyght Serif.otf');
+}

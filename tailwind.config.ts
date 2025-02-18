@@ -53,7 +53,8 @@ const config: Config = {
 				card: {
 					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
-				}
+				},
+				offWhite: "#FFFBF0"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -64,7 +65,8 @@ const config: Config = {
 				sans: [...fontFamily.sans],
 				nexusbold: 'Nexusbold',
 				mortend: 'Mortend',
-				montserrat: 'Montserrat'
+				montserrat: 'Montserrat',
+				nyghtSerif: 'Nyght Serif'
 			}
 		}
 	}
