@@ -65,16 +65,4 @@ body,
 	animation-delay: 0.5s;
 }
 
-.content:has(.searchInput:focus) > .contentWrapper {
-	filter: blur(8px);
-}
-
 /* ------------------------------------------------------- */
-
-/* Grid background */
-
-.gridBG {
-	background-image: radial-gradient(circle, rgb(203, 213, 225, 0.2) 2px, transparent 2px);
-	background-size: 2.5rem 2rem;
-	background-position: center center;
-}

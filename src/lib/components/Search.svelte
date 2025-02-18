@@ -3,7 +3,6 @@
 	import { store as searchStore } from '$lib/stores/store';
 	import searchData, { type SearchData } from './searchData';
 	import { slide } from 'svelte/transition';
-	import { navigateStore } from '$lib/stores/navigateStore';
 
 	let active = $state(false),
 		hover = $state(false),
@@ -42,10 +41,6 @@
 						setTimeout(() => {
 							active = false;
 							$searchStore.searchActive = false;
-							setTimeout(() => {
-								$navigateStore.navigating = true;
-								$navigateStore.navigateTo = searchResult.link;
-							}, 500);
 						}, 500);
 						searchResults = [];
 						searchValue = '';
