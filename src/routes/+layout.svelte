@@ -35,9 +35,9 @@
 			<Loading />
 		</div>
 	{:else}
-		<div class="content">
+		<div class="content h-full overflow-y-hidden">
 			<Navbar />
-			{@render children()}
+			<div class="h-full">{@render children()}</div>
 		</div>
 	{/if}
 </div>
