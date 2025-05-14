@@ -2,6 +2,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import ArrowLeft from 'carbon-icons-svelte/lib/ArrowLeft.svelte';
+	import Menu from "carbon-icons-svelte/lib/Menu.svelte";
 
 	const links = [
 		{
@@ -25,12 +26,17 @@
 			in:fly|global={{ y: 40, duration: 750, delay: 250 }}><ArrowLeft size={24} /></button
 		>
 	{/if}
-	<div class="flex gap-12">
-		{#each links as link, i}
-			<button
-				class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black'} transition-all hover:text-black/50`}
-				in:fade|global={{ duration: 250, delay: i * 250 }}>{link.name}</button
-			>
-		{/each}
+	<div class="w-full">
+		<div class="mobile:hidden flex justify-end gap-12">
+			{#each links as link, i}
+				<button
+					class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black'} transition-all hover:text-black/50`}
+					in:fade|global={{ duration: 250, delay: i * 250 }}>{link.name}</button
+				>
+			{/each}
+		</div>
+		<div class="hidden mobile:flex justify-end w-full">
+			<Menu size={24} class="text-black" />
+		</div>
 	</div>
 </div>
