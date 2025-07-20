@@ -6,7 +6,7 @@
 
   function adjustHeadlineWidth(width: number) {
     if (width > 645) {
-      window.fitText(document.getElementById('title'), 0.655);
+      window.fitText(document.getElementById('title'), 0.604);
     } else {
       window.fitText(document.getElementsByClassName('title')[0], 0.405);
       window.fitText(document.getElementsByClassName('title')[1], 0.405);
