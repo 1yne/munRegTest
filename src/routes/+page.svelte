@@ -28,7 +28,7 @@
 <div
 	class="flex h-[38%] flex-col px-12 py-6 pb-[2.5rem] text-black justify-between mobile:px-6 mobile:pb-6"
 >
-	<h1 id="title" class="mb-8 flex justify-center font-nyghtSerif leading-none mobile:hidden">RoMUN 2025</h1>
+	<h1 id="title" class="flex justify-center font-nyghtSerif leading-none mobile:hidden">RoMUN 2025</h1>
 	<div class="hidden w-full mobile:block font-nyghtSerif leading-none">
 		<h1 class="title">RoMUN</h1>
 		<h1 class="title">2025</h1>
