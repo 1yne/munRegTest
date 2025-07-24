@@ -1,7 +1,7 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import ArrowLeft from 'carbon-icons-svelte/lib/ArrowLeft.svelte';
+	import ChevronLeft from "carbon-icons-svelte/lib/ChevronLeft.svelte";
 	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
 
 	const links = [
@@ -26,7 +26,7 @@
 			in:fly|global={{ y: 40, duration: 750, delay: 250 }}
 			out:fly|global={{ y: 40, duration: 750 }}
 			><a href="/">
-				<ArrowLeft size={24} />
+				<ChevronLeft size={24} />
 			</a></button
 		>
 	{/if}
