@@ -18,7 +18,7 @@
 
 <div
 	transition:fade={{ duration: 5 }}
-	class={`fixed flex h-20 w-full items-center ${$page.route.id == '/' ? 'justify-end border-b border-black' : 'justify-between'} px-12 py-6 font-montserrat tracking-[0.18em] mobile:justify-between mobile:px-6`}
+	class={`fixed flex h-20 w-full items-center ${$page.route.id == '/' ? 'justify-end border-b border-black' : 'justify-between'} px-12 py-6 font-montserrat tracking-[0.18em] mobile:justify-between mobile:px-6 z-10`}
 >
 	{#if $page.route.id != '/'}
 		<button
