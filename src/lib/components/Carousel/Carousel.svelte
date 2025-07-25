@@ -1,67 +1,96 @@
 <script lang="ts">
-	import ChevronDown from "carbon-icons-svelte/lib/ChevronDown.svelte";
-	import ChevronUp from "carbon-icons-svelte/lib/ChevronUp.svelte";
-	import { slide } from "svelte/transition";
-	$: topArray = ['/images/AIPPM.jpg', '/images/CCC.jpg'];
-	$: current = '/images/DISEC.jpg';
-	$: bottomArray = ['/images/HRC.jpg', '/images/UNSC.jpg'];
+	import ChevronDown from 'carbon-icons-svelte/lib/ChevronDown.svelte';
+	import ChevronUp from 'carbon-icons-svelte/lib/ChevronUp.svelte';
+	import { fly } from 'svelte/transition';
+
+	$: topArray = [
+		{
+			link: '/images/AIPPM.jpg',
+			name: 'AIPPM',
+			full: 'All India Political Party Meet'
+		},
+		{
+			link: '/images/CCC.jpg',
+			name: 'CCC',
+			full: 'Continous Crisis Committee'
+		}
+	];
+	$: current = {
+		link: '/images/DISEC.jpg',
+		name: 'DISEC',
+		full: 'Disarmament and International Security Meet'
+	};
+	$: bottomArray = [
+		{
+			link: '/images/HRC.jpg',
+			name: 'HRC',
+			full: 'Human Rights Council'
+		},
+		{
+			link: '/images/UNSC.jpg',
+			name: 'UNSC',
+			full: 'United Nations Security Council'
+		}
+	];
+
+	export const currentPicture = current;
 
 	function moveUp() {
-		topArray.push(current)
-		current = bottomArray[0]
-		bottomArray.shift()
-		bottomArray = bottomArray
-		topArray = topArray
+		if (bottomArray.length != 0) {
+			topArray.push(current);
+			current = bottomArray[0];
+			bottomArray.shift();
+			bottomArray = bottomArray;
+			topArray = topArray;
+		}
 	}
 	function moveDown() {
-		bottomArray.unshift(current)
-		current = topArray[topArray.length - 1]
-		topArray.pop()
-		bottomArray = bottomArray
-		topArray = topArray
+		if (topArray.length != 0) {
+			bottomArray.unshift(current);
+			current = topArray[topArray.length - 1];
+			topArray.pop();
+			bottomArray = bottomArray;
+			topArray = topArray;
+		}
 	}
 </script>
 
 <div class="flex h-full w-full items-center justify-center">
-	{#key topArray}
-		{#each topArray as topPic, i}
-			<img
-				src={topPic}
-				alt=""
-				transition:slide
-				class="absolute w-2/5 rounded-lg border-2 border-gray-500 topImage"
-				style="--margin:{(topArray.length - i)*3}rem; --scale:{0.9 - (topArray.length - i - 1)*0.15}"
-			/>
-		{/each}
-	{/key}
-	{#key bottomArray}
-		{#each bottomArray as bottomPic, i}
-			<img
-				src={bottomPic}
-				alt=""
-				transition:slide
-				class="absolute w-2/5 rounded-lg border-2 border-gray-500 bottomImage"
-				style="--margin:{(i + 1)*3}rem; --scale:{0.9 - (i)*0.15}; --z:{5 - i}"
-			/>
-		{/each}
-	{/key}
+	{#each topArray as topPic, i}
+		<img
+			src={topPic.link}
+			alt={topPic.name}
+			transition:fly
+			class="topImage absolute w-2/5 rounded-lg border-2 border-gray-500"
+			style="--margin:{(topArray.length - i) * 3}rem; --scale:{0.9 -
+				(topArray.length - i - 1) * 0.15}"
+		/>
+	{/each}
+	{#each bottomArray as bottomPic, i}
+		<img
+			src={bottomPic.link}
+			alt={bottomPic.name}
+			transition:fly
+			class="bottomImage absolute w-2/5 rounded-lg border-2 border-gray-500"
+			style="--margin:{(i + 1) * 3}rem; --scale:{0.9 - i * 0.15}; --z:{5 - i}"
+		/>
+	{/each}
 	<img
-		src={current}
-		alt=""
-		transition:slide
-		class="absolute w-2/5 rounded-lg border-2 border-black transition-all hover:border-white z-10"
+		src={current.link}
+		alt={current.name}
+		transition:fly
+		class="absolute z-10 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white"
 	/>
 </div>
-<div class="flex flex-col text-black/50 gap-8 transition-all">
-	<ChevronUp size={24} class="hover:text-black" onclick={moveUp} />
-	<ChevronDown size={24} class="hover:text-black" onclick={moveDown} />
+<div class="flex flex-col gap-8 text-black/50 transition-all">
+	<ChevronUp size={24} class="hover:text-black" onclick={moveDown} />
+	<ChevronDown size={24} class="hover:text-black" onclick={moveUp} />
 </div>
-
 
 <style>
 	.topImage {
 		margin-bottom: var(--margin);
-		transform: scale(var(--scale), 1)
+		transform: scale(var(--scale), 1);
 	}
 	.bottomImage {
 		margin-top: var(--margin);
