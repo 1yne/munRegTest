@@ -2,8 +2,9 @@
 	import ChevronDown from 'carbon-icons-svelte/lib/ChevronDown.svelte';
 	import ChevronUp from 'carbon-icons-svelte/lib/ChevronUp.svelte';
 	import { fly } from 'svelte/transition';
+	import { currentPictureState } from './currentPicture.svelte';
 
-	$: topArray = [
+	let topArray = $state([
 		{
 			link: '/images/AIPPM.jpg',
 			name: 'AIPPM',
@@ -14,13 +15,8 @@
 			name: 'CCC',
 			full: 'Continous Crisis Committee'
 		}
-	];
-	$: current = {
-		link: '/images/DISEC.jpg',
-		name: 'DISEC',
-		full: 'Disarmament and International Security Meet'
-	};
-	$: bottomArray = [
+	]);
+	let bottomArray = $state([
 		{
 			link: '/images/HRC.jpg',
 			name: 'HRC',
@@ -31,14 +27,12 @@
 			name: 'UNSC',
 			full: 'United Nations Security Council'
 		}
-	];
-
-	export const currentPicture = current;
+	]);
 
 	function moveUp() {
 		if (bottomArray.length != 0) {
-			topArray.push(current);
-			current = bottomArray[0];
+			topArray.push($currentPictureState);
+			$currentPictureState = bottomArray[0];
 			bottomArray.shift();
 			bottomArray = bottomArray;
 			topArray = topArray;
@@ -46,8 +40,8 @@
 	}
 	function moveDown() {
 		if (topArray.length != 0) {
-			bottomArray.unshift(current);
-			current = topArray[topArray.length - 1];
+			bottomArray.unshift($currentPictureState);
+			$currentPictureState = topArray[topArray.length - 1]
 			topArray.pop();
 			bottomArray = bottomArray;
 			topArray = topArray;
@@ -76,8 +70,8 @@
 		/>
 	{/each}
 	<img
-		src={current.link}
-		alt={current.name}
+		src={$currentPictureState.link}
+		alt={$currentPictureState.name}
 		transition:fly
 		class="absolute z-10 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white"
 	/>
