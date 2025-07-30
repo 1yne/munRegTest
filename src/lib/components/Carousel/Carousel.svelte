@@ -6,24 +6,24 @@
 
 	let topArray = $state([
 		{
-			link: '/images/AIPPM.jpg',
+			imageLink: '/images/AIPPM.jpg',
 			name: 'AIPPM',
 			full: 'All India Political Party Meet'
 		},
 		{
-			link: '/images/CCC.jpg',
+			imageLink: '/images/CCC.jpg',
 			name: 'CCC',
 			full: 'Continous Crisis Committee'
 		}
 	]);
 	let bottomArray = $state([
 		{
-			link: '/images/HRC.jpg',
+			imageLink: '/images/HRC.jpg',
 			name: 'HRC',
 			full: 'Human Rights Council'
 		},
 		{
-			link: '/images/UNSC.jpg',
+			imageLink: '/images/UNSC.jpg',
 			name: 'UNSC',
 			full: 'United Nations Security Council'
 		}
@@ -52,7 +52,7 @@
 <div class="flex h-full w-full items-center justify-center">
 	{#each topArray as topPic, i}
 		<img
-			src={topPic.link}
+			src={topPic.imageLink}
 			alt={topPic.name}
 			transition:fly
 			class="topImage absolute w-2/5 rounded-lg border-2 border-gray-500"
@@ -62,7 +62,7 @@
 	{/each}
 	{#each bottomArray as bottomPic, i}
 		<img
-			src={bottomPic.link}
+			src={bottomPic.imageLink}
 			alt={bottomPic.name}
 			transition:fly
 			class="bottomImage absolute w-2/5 rounded-lg border-2 border-gray-500"
@@ -70,7 +70,7 @@
 		/>
 	{/each}
 	<img
-		src={$currentPictureState.link}
+		src={$currentPictureState.imageLink}
 		alt={$currentPictureState.name}
 		transition:fly
 		class="absolute z-10 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white"
