@@ -1,7 +1,7 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import ChevronLeft from "carbon-icons-svelte/lib/ChevronLeft.svelte";
+	import ChevronLeft from 'carbon-icons-svelte/lib/ChevronLeft.svelte';
 	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
 
 	const links = [
@@ -18,17 +18,17 @@
 
 <div
 	transition:fade={{ duration: 5 }}
-	class={`fixed flex h-20 w-full items-center ${$page.route.id == '/' ? 'justify-end border-b border-black' : 'justify-between'} px-12 py-6 font-montserrat tracking-[0.18em] mobile:justify-between mobile:px-6 z-10`}
+	class={`fixed flex h-20 w-full items-center ${$page.route.id == '/' ? 'justify-end border-b border-black' : 'justify-between'} z-10 px-12 py-6 font-montserrat tracking-[0.18em] mobile:justify-between mobile:px-6`}
 >
 	{#if $page.route.id != '/'}
 		<button
 			class="text-black/50 transition-all hover:text-black"
 			in:fly|global={{ y: 40, duration: 750, delay: 250 }}
 			out:fly|global={{ y: 40, duration: 750 }}
-			><a href="/">
-				<ChevronLeft size={24} />
-			</a></button
+			onclick={() => window.history.back()}
 		>
+			<ChevronLeft size={24} />
+		</button>
 	{/if}
 	<div class="w-full">
 		<div class="flex justify-end gap-12 mobile:hidden">
