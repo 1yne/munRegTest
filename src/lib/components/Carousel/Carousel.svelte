@@ -58,7 +58,8 @@
 		alt={$currentPictureState.name}
 		transition:fly
 		onclick={() => goto($currentPictureState.link)}
-		class="absolute z-10 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white"
+		style:--committeeImage={`image-${$currentPictureState.name}`}
+		class="absolute z-10 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white currentPicture"
 	/>
 </div>
 <div class="flex flex-col gap-8 text-black/50 transition-all">
@@ -75,5 +76,8 @@
 		margin-top: var(--margin);
 		transform: scale(var(--scale), 1);
 		z-index: var(--z);
+	}
+	.currentPicture {
+		view-transition-name: var(--committeeImage);
 	}
 </style>
