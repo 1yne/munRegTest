@@ -33,11 +33,19 @@
 	<div class="w-full">
 		<div class="flex justify-end gap-12 mobile:hidden">
 			{#each links as link, i}
-				<button
-					class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black'} transition-all hover:text-black/50`}
-					in:fade|global={{ duration: 250, delay: i * 250 }}
-					><a href={link.link}>{link.name}</a></button
-				>
+				{#if $page.route.id?.includes("/committees/")}
+					<button
+						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-[#e1deb7]' : 'text-[#928f77]'} transition-all hover:text-[#f9f4b4]`}
+						in:fade|global={{ duration: 250, delay: i * 250 }}
+						><a href={link.link}>{link.name}</a></button
+					>
+				{:else}
+					<button
+						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black/50'} transition-all hover:text-black`}
+						in:fade|global={{ duration: 250, delay: i * 250 }}
+						><a href={link.link}>{link.name}</a></button
+					>
+				{/if}
 			{/each}
 		</div>
 		<div class="hidden w-full justify-end mobile:flex">
