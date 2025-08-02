@@ -4,7 +4,7 @@
 
 <div class="flex h-full w-full">
 	<div class="w-1/2 px-12 pt-20">
-		<h1 class="font-nyghtSerif text-8xl text-black">{$currentPictureState.name}</h1>
+		<h1 class="font-nyghtSerif text-8xl text-black text-[14cqw] leading-[0.75]">{$currentPictureState.name}</h1>
 	</div>
 	<div class="w-1/2">
 		<img
