@@ -33,9 +33,9 @@
 	<div class="w-full">
 		<div class="flex justify-end gap-12 mobile:hidden">
 			{#each links as link, i}
-				{#if $page.route.id?.includes("/committees/")}
+				{#if $page.route.id?.includes('/committees/')}
 					<button
-						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-[#e1deb7]' : 'text-[#928f77]'} transition-all hover:text-[#f9f4b4]`}
+						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-white' : 'text-white/40'} transition-all hover:text-[#e1deb7]`}
 						in:fade|global={{ duration: 250, delay: i * 250 }}
 						><a href={link.link}>{link.name}</a></button
 					>
