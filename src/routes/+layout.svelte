@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { fly } from 'svelte/transition';
 
 	let loading: boolean = $state(true);
 
@@ -31,11 +32,11 @@
 <ModeWatcher />
 <div class="h-screen w-full bg-offWhite">
 	{#if loading}
-		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}>
+		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`} out:fly={{ y: 40, duration: 150 }}>
 			<Loading />
 		</div>
 	{:else}
-		<div class="content h-full overflow-y-hidden">
+		<div class="content h-full" transition:fly={{ y: 40, duration: 500, delay: 300 }}>
 			<Navbar />
 			<div class="h-full">{@render children()}</div>
 		</div>
