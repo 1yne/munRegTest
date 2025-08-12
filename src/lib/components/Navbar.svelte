@@ -31,22 +31,27 @@
 		</button>
 	{/if}
 	<div class="w-full">
-		<div class="flex justify-end gap-12 mobile:hidden">
-			{#each links as link, i}
-				{#if $page.route.id?.includes('/committees/')}
-					<button
-						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-white' : 'text-white/40'} transition-all hover:text-[#e1deb7]`}
-						in:fade|global={{ duration: 250, delay: i * 250 }}
-						><a href={link.link}>{link.name}</a></button
-					>
-				{:else}
-					<button
-						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black/50'} transition-all hover:text-black`}
-						in:fade|global={{ duration: 250, delay: i * 250 }}
-						><a href={link.link}>{link.name}</a></button
-					>
-				{/if}
-			{/each}
+		<div class="flex justify-between mobile:hidden">
+			<div>
+				<h1 class="text-black font-nyghtSerif">RoMUN 2025</h1>
+			</div>
+			<div class="flex gap-12">
+				{#each links as link, i}
+					{#if $page.route.id?.includes('/committees/')}
+						<button
+							class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-white' : 'text-white/40'} transition-all hover:text-[#e1deb7]`}
+							in:fade|global={{ duration: 250, delay: i * 250 }}
+							><a href={link.link}>{link.name}</a></button
+						>
+					{:else}
+						<button
+							class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black/50'} transition-all hover:text-black`}
+							in:fade|global={{ duration: 250, delay: i * 250 }}
+							><a href={link.link}>{link.name}</a></button
+						>
+					{/if}
+				{/each}
+			</div>
 		</div>
 		<div class="hidden w-full justify-end mobile:flex">
 			<Menu size={24} class="text-black" />
