@@ -1,6 +1,6 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
-import unfonts from "unplugin-fonts"
+import unfonts from 'unplugin-fonts';
 
 const config: Config = {
 	darkMode: ['class'],
@@ -55,7 +55,7 @@ const config: Config = {
 					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
 				},
-				offWhite: "#FFFBF0"
+				offWhite: '#FFFBF0'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -74,15 +74,15 @@ const config: Config = {
 	plugins: [
 		unfonts.vite({
 			custom: {
-        families: [
-          {
-            name: "NyghtSerif",
-            local: "Oswald",
-            src: "/fonts/Nyght Serif/Nyght Serif.otf",
-          },
-        ],
-      },
-		}),
+				families: [
+					{
+						name: 'NyghtSerif',
+						local: 'Oswald',
+						src: '/fonts/Nyght Serif/Nyght Serif.otf'
+					}
+				]
+			}
+		})
 	]
 };
 

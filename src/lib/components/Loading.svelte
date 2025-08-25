@@ -1,5 +1,5 @@
 <script>
-	import Carousel from "./Carousel/Carousel.svelte";
+	import Carousel from './Carousel/Carousel.svelte';
 </script>
 
 <div>

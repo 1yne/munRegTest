@@ -32,7 +32,10 @@
 <ModeWatcher />
 <div class="h-screen w-full bg-offWhite">
 	{#if loading}
-		<div class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`} out:fly={{ y: 40, duration: 150 }}>
+		<div
+			class={`flex h-full w-full items-end p-12 mobile:p-6 mobile:pl-8`}
+			out:fly={{ y: 40, duration: 150 }}
+		>
 			<Loading />
 		</div>
 	{:else}

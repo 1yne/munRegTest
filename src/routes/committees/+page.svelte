@@ -10,7 +10,7 @@
 				<h1 class="font-nyghtSerif text-[9rem] leading-tight text-black">
 					{$currentPictureState.name}
 				</h1>
-				<p class="font-montserrat text-black uppercase">{$currentPictureState.full}</p>
+				<p class="font-montserrat uppercase text-black">{$currentPictureState.full}</p>
 			</div>
 		{/key}
 		<div class="flex h-full w-1/2 items-center justify-center">
