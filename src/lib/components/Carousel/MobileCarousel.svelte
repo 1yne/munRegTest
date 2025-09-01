@@ -35,7 +35,7 @@
         alt={topPic.name}
         transition:fly
         onclick={() => goto(topPic.link)}
-        class="topImage absolute h-1/2 w-3/4 rounded-lg border-2 border-gray-500"
+        class="topImage absolute h-1/2 w-3/4 rounded-lg border-2 border-gray-500 object-cover"
         style="--margin:{($topArrayState.length - i) * 3}rem; --scale:{0.9 -
           ($topArrayState.length - i - 1) * 0.5}"
       />
@@ -48,7 +48,7 @@
         alt={bottomPic.name}
         transition:fly
         onclick={() => goto(bottomPic.link)}
-        class="bottomImage absolute h-1/2 w-3/4 rounded-lg border-2 border-gray-500"
+        class="bottomImage absolute h-1/2 w-3/4 rounded-lg border-2 border-gray-500 object-cover"
         style="--margin:{(i + 1) * 3}rem; --scale:{0.9 - i * 0.5}; --z:{5 - i}"
       />
     {/each}
@@ -60,7 +60,7 @@
       transition:fly
       onclick={() => goto($currentPictureState.link)}
       style:--committeeImage={`image-${$currentPictureState.name}`}
-      class="currentPicture absolute z-10 h-1/2 w-3/4 rounded-lg border-2 border-black transition-all hover:border-white"
+      class="currentPicture absolute z-10 h-1/2 w-3/4 rounded-lg border-2 border-black transition-all hover:border-white object-cover"
     />
   </div>
   <div class="flex justify-center gap-8 text-black/50 transition-all">
@@ -72,11 +72,11 @@
 <style>
 	.topImage {
 		margin-left: var(--margin);
-		transform: scale(var(--scale), 1);
+		transform: scale(1, var(--scale));
 	}
 	.bottomImage {
 		margin-right: var(--margin);
-		transform: scale(var(--scale), 1);
+		transform: scale(1, var(--scale));
 		z-index: var(--z);
 	}
 	.currentPicture {
