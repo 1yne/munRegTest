@@ -62,9 +62,9 @@
 		class="currentPicture absolute z-10 h-2/5 w-2/5 rounded-lg border-2 border-black transition-all hover:border-white"
 	/>
 </div>
-<div class="flex flex-col gap-8 text-black/50 transition-all">
-	<ChevronUp size={24} class="hover:text-black" onclick={moveDown} />
-	<ChevronDown size={24} class="hover:text-black" onclick={moveUp} />
+<div class="flex flex-col gap-8 text-black/50">
+	<ChevronUp size={24} class={`${$topArrayState.length == 0 ? 'text-gray-500' : "hover:text-black transition-all"}`} onclick={moveDown} />
+	<ChevronDown size={24} class={` ${$bottomArrayState.length == 0 ? 'text-gray-500' : "hover:text-black transition-all"}`} onclick={moveUp} />
 </div>
 
 <style>
