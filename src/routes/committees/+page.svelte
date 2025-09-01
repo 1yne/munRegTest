@@ -18,16 +18,16 @@
 			<Carousel />
 		</div>
 	</div>
-	<div class="hidden mobile:flex h-full w-full flex-col">
-		<div class="flex h-1/2 w-full items-center justify-center">
+	<div class="hidden mobile:flex h-full w-full flex-col justify-between">
+		<div class="flex flex-grow">
 			<MobileCarousel />
 		</div>
 		{#key $currentPictureState}
-			<div class="flex h-1/2 w-full flex-col items-center justify-center">
-				<h1 class="nyghtSerif text-[6rem] leading-tight text-black">
+			<div class="flex w-full flex-col justify-center">
+				<h1 class="nyghtSerif text-[4rem] leading-tight text-black">
 					{$currentPictureState.name}
 				</h1>
-				<p class="font-montserrat uppercase text-black">{$currentPictureState.full}</p>
+				<p class="font-montserrat text-sm uppercase text-black">{$currentPictureState.full}</p>
 			</div>
 		{/key}
 	</div>

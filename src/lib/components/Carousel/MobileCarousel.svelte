@@ -64,8 +64,8 @@
     />
   </div>
   <div class="flex justify-center gap-8 text-black/50 transition-all">
-    <ChevronLeft size={24} class="hover:text-black" onclick={moveDown} />
-    <ChevronRight size={24} class="hover:text-black" onclick={moveUp} />
+    <ChevronLeft size={24} class="hover:text-black" onclick={moveUp} />
+    <ChevronRight size={24} class="hover:text-black" onclick={moveDown} />
   </div>
 </div>
 
