@@ -1,6 +1,5 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
-import unfonts from 'unplugin-fonts';
 
 const config: Config = {
 	darkMode: ['class'],
@@ -66,24 +65,10 @@ const config: Config = {
 				sans: [...fontFamily.sans],
 				nexusbold: 'Nexusbold',
 				mortend: 'Mortend',
-				montserrat: 'Montserrat',
-				nyghtSerif: 'Nyght Serif'
+				montserrat: 'Montserrat'
 			}
 		}
-	},
-	plugins: [
-		unfonts.vite({
-			custom: {
-				families: [
-					{
-						name: 'NyghtSerif',
-						local: 'Oswald',
-						src: '/fonts/Nyght Serif/Nyght Serif.otf'
-					}
-				]
-			}
-		})
-	]
+	}
 };
 
 export default config;

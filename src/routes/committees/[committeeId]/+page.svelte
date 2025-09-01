@@ -11,7 +11,7 @@
 <div class="flex h-full w-full">
 	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20">
 		<div>
-			<h1 class="font-nyghtSerif text-8xl text-[14cqw] leading-[0.75] text-black">
+			<h1 class="nyghtSerif text-8xl text-[14cqw] leading-[0.75] text-black">
 				{committeeData.name}
 			</h1>
 			<p class="mt-8 font-montserrat uppercase text-black">{committeeData.full}</p>

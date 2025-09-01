@@ -8,7 +8,7 @@
 	<div class="flex h-full w-full mobile:hidden">
 		{#key $currentPictureState}
 			<div class="flex h-full w-1/2 flex-col items-center justify-center">
-				<h1 class="font-nyghtSerif text-[9rem] leading-tight text-black">
+				<h1 class="nyghtSerif text-[9rem] leading-tight text-black">
 					{$currentPictureState.name}
 				</h1>
 				<p class="font-montserrat uppercase text-black">{$currentPictureState.full}</p>
@@ -24,7 +24,7 @@
 		</div>
 		{#key $currentPictureState}
 			<div class="flex h-1/2 w-full flex-col items-center justify-center">
-				<h1 class="font-nyghtSerif text-[6rem] leading-tight text-black">
+				<h1 class="nyghtSerif text-[6rem] leading-tight text-black">
 					{$currentPictureState.name}
 				</h1>
 				<p class="font-montserrat uppercase text-black">{$currentPictureState.full}</p>

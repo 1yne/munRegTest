@@ -73,14 +73,14 @@
 				onclick={() => menuVisible = false}
 				class="committees flex min-h-48 w-full items-end rounded-lg border-2 border-black bg-cover bg-center p-6 text-white"
 			>
-				<h1 class="font-nyghtSerif text-2xl uppercase">Committees</h1>
+				<h1 class="nyghtSerif text-2xl uppercase">Committees</h1>
 			</a>
 			<a
 				href="/register"
 				onclick={() => menuVisible = false}
 				class="register flex min-h-48 w-full items-end rounded-lg border-2 border-black bg-cover bg-center p-6 text-white"
 			>
-				<h1 class="font-nyghtSerif text-2xl uppercase">Register</h1>
+				<h1 class="nyghtSerif text-2xl uppercase">Register</h1>
 			</a>
 		</div>
 	</div>
