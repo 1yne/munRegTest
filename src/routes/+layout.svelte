@@ -8,6 +8,7 @@
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { fly } from 'svelte/transition';
+	import Search from '$lib/components/Search.svelte';
 
 	let loading: boolean = $state(true);
 
@@ -42,10 +43,16 @@
 		<div class="content h-full" transition:fly={{ y: 40, duration: 500, delay: 300 }}>
 			<Navbar />
 			<div class="h-full">{@render children()}</div>
+			<div class="hidden mobile:flex p-6 fixed z-10 bottom-0 justify-center w-full search">
+				<Search />
+			</div>
 		</div>
 	{/if}
 </div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+	.search {
+		background-image: linear-gradient(transparent, black);
+	}
 </style>
