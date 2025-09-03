@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const currentPictureState = writable({
 	imageLink: '/images/DISEC.jpg',
 	name: 'DISEC',
-	full: 'Disarmament and International Security Meet',
+	full: 'Disarmament and International Security',
 	link: '/committees/disec',
 	agenda: '',
 	description: `DISEC addresses the global security threats of LAWs and UAVs, balancing strategic advantages with ethical oversight. Delegates will negotiate frameworks to regulate these technologies, ensuring international stability and compliance with humanitarian law.`
@@ -83,7 +83,7 @@ export const allDataStore = writable([
 	{
 		imageLink: '/images/DISEC.jpg',
 		name: 'DISEC',
-		full: 'Disarmament and International Security Meet',
+		full: 'Disarmament and International Security',
 		link: '/committees/disec',
 		agenda: '',
 		description: `DISEC addresses the global security threats of LAWs and UAVs, balancing strategic advantages with ethical oversight. Delegates will negotiate frameworks to regulate these technologies, ensuring international stability and compliance with humanitarian law.`

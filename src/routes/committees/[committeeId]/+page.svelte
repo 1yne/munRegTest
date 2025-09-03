@@ -8,22 +8,30 @@
 	$inspect(committeeData);
 </script>
 
-<div class="flex h-full w-full">
-	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20">
+<div class="flex h-full w-full mobile:flex-col">
+	<div class="w-full hidden mobile:block h-full">
+		<img
+			src={committeeData.imageLink}
+			class="currentPicture h-full w-full object-cover"
+			alt=""
+			style:--committeeImage={`image-${committeeData.name}`}
+		/>
+	</div>
+	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20 mobile:w-full mobile:p-6">
 		<div>
-			<h1 class="nyghtSerif text-8xl text-[14cqw] leading-[0.75] text-black">
+			<h1 class="nyghtSerif text-[14cqw] leading-[0.75] text-black mobile:text-[18cqw]">
 				{committeeData.name}
 			</h1>
-			<p class="mt-8 font-montserrat uppercase text-black">{committeeData.full}</p>
+			<p class="mt-8 mobile:my-4 font-montserrat uppercase text-black mobile:text-md">{committeeData.full}</p>
 		</div>
 		<div class="font-montserrat">
-			<div class="rounded-lg border-2 border-[#e1deb7] p-6 py-4 text-black">
+			<div class="rounded-lg border-2 border-[#e1deb7] p-6 py-4 text-black mobile:text-sm mobile:p-4 mobile:py-2">
 				<h1>AGENDA: {committeeData.agenda}</h1>
 			</div>
-			<p class="mt-8 leading-tight text-black">{committeeData.description}</p>
+			<p class="mt-8 leading-tight text-black mobile:text-sm">{committeeData.description}</p>
 		</div>
 	</div>
-	<div class="w-1/2">
+	<div class="w-1/2 mobile:hidden">
 		<img
 			src={committeeData.imageLink}
 			class="currentPicture h-full w-full object-cover"
