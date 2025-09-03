@@ -26,7 +26,7 @@
 </script>
 
 <div class="flex w-full h-full flex-col">
-  <div class="flex h-full w-full items-center justify-center">
+  <div class="flex h-5/6 w-full items-center justify-center">
     {#each $topArrayState as topPic, i}
       <!-- svelte-ignore a11y_click_events_have_key_events -->
       <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->

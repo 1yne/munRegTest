@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="hidden mobile:flex h-full w-full flex-col justify-between">
-		<div class="flex flex-grow">
+		<div class="h-full">
 			<MobileCarousel />
 		</div>
 		{#key $currentPictureState}
