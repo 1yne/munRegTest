@@ -43,7 +43,7 @@
 		<div class="content h-full" transition:fly={{ y: 40, duration: 500, delay: 300 }}>
 			<Navbar />
 			<div class="h-full">{@render children()}</div>
-			<div class="hidden mobile:flex p-6 fixed z-10 bottom-0 justify-center w-full search">
+			<div class="flex p-6 fixed z-10 bottom-0 justify-center w-full search">
 				<Search />
 			</div>
 		</div>

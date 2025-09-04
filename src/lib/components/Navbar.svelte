@@ -3,20 +3,8 @@
 	import { page } from '$app/stores';
 	import ChevronLeft from 'carbon-icons-svelte/lib/ChevronLeft.svelte';
 	import Close from 'carbon-icons-svelte/lib/Close.svelte';
-	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
 
 	let menuVisible = $state(false);
-
-	const links = [
-		{
-			link: '/committees',
-			name: 'Committees'
-		},
-		{
-			link: '/register',
-			name: 'Register'
-		}
-	];
 </script>
 
 <div
@@ -33,28 +21,6 @@
 			<ChevronLeft size={24} />
 		</button>
 	{/if}
-	<div class="w-full">
-		<div class="flex justify-end gap-12 mobile:hidden">
-			{#each links as link, i}
-				{#if $page.route.id?.includes('/committees/')}
-					<button
-						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-white' : 'text-white/40'} transition-all hover:text-[#e1deb7]`}
-						in:fade|global={{ duration: 250, delay: i * 250 }}
-						><a href={link.link}>{link.name}</a></button
-					>
-				{:else}
-					<button
-						class={`font-normal uppercase ${$page.route.id?.includes(link.link) ? 'text-black' : 'text-black/50'} transition-all hover:text-black`}
-						in:fade|global={{ duration: 250, delay: i * 250 }}
-						><a href={link.link}>{link.name}</a></button
-					>
-				{/if}
-			{/each}
-		</div>
-		<div class="hidden w-full justify-end mobile:flex">
-			<Menu size={24} class="text-black" onclick={() => (menuVisible = true)} />
-		</div>
-	</div>
 </div>
 
 {#if menuVisible}
