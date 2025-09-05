@@ -10,34 +10,34 @@
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div
-	class="flex flex-col rounded-3xl border border-white/50 bg-black/75 transition-all hover:border-white"
-	onmouseenter={() => (hover = true)}
-	onmouseleave={() => (hover = false)}
->
-	<button class="flex h-12 w-full items-center justify-center gap-4 px-6 py-4">
+<div>
+	<button
+		class="flex h-12 w-4 hover:w-[30rem] items-center justify-center gap-4 rounded-3xl border border-white/50 bg-black/75 px-6 py-4 transition-all hover:border-white"
+		onmouseenter={() => (hover = true)}
+		onmouseleave={() => (hover = false)}
+	>
 		{#if hover}
 			<a
 				href="/committees"
-				transition:fly={{ y: 40, duration: 750, easing: backInOut }}
+				in:fly={{ y: 40, duration: 750, easing: backInOut }}
 				class={`font-montserrat uppercase ${$page.route.id?.includes('committees') ? 'text-white' : 'text-white/50'} transition-all hover:text-white`}
 				>Committees</a
 			>
 			<hr class="border border-white" />
 			<a
 				href="/register"
-				transition:fly={{ y: 40, duration: 750, delay: 100, easing: backInOut }}
+				in:fly={{ y: 40, duration: 750, delay: 100, easing: backInOut }}
 				class="font-montserrat uppercase text-white/50 transition-all hover:text-white">Register</a
 			>
 			<hr class="border border-white" />
 			<a
 				href="/register"
-				transition:fly={{ y: 40, duration: 750, delay: 200, easing: backInOut }}
+				in:fly={{ y: 40, duration: 750, delay: 200, easing: backInOut }}
 				class="font-montserrat uppercase text-white/50 transition-all hover:text-white"
 				>Country Matrix</a
 			>
 		{:else}
-			<div in:fly={{ delay: 150, y: 40, easing: backInOut}}>
+			<div in:fly={{ delay: 150, y: 40, easing: backInOut }}>
 				<Menu class={`text-white/50 transition-all ${hover || active ? '!text-[#d60202]' : ''}`} />
 			</div>
 		{/if}
