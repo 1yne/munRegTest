@@ -17,7 +17,7 @@
 			style:--committeeImage={`image-${committeeData.name}`}
 		/>
 	</div>
-	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20 mobile:w-full mobile:p-6">
+	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20 mobile:w-full mobile:p-6 mobile:pb-16 bg-offWhite">
 		<div>
 			<h1 class="nyghtSerif text-[14cqw] leading-[0.75] text-black mobile:text-[18cqw]">
 				{committeeData.name}
