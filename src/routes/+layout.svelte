@@ -10,6 +10,7 @@
 	import { fly } from 'svelte/transition';
 	import Search from '$lib/components/Search.svelte';
 	import MobileSearch from '$lib/components/MobileSearch.svelte';
+	import Cursor from '$lib/components/Cursor.svelte';
 
 	let loading: boolean = $state(true);
 
@@ -32,6 +33,7 @@
 </script>
 
 <ModeWatcher />
+<Cursor />
 <div class="h-screen w-full bg-offWhite">
 	{#if loading}
 		<div
