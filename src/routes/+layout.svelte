@@ -9,6 +9,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { fly } from 'svelte/transition';
 	import Search from '$lib/components/Search.svelte';
+	import MobileSearch from '$lib/components/MobileSearch.svelte';
 
 	let loading: boolean = $state(true);
 
@@ -43,8 +44,11 @@
 		<div class="content h-full" transition:fly={{ y: 40, duration: 500, delay: 300 }}>
 			<Navbar />
 			<div class="h-full">{@render children()}</div>
-			<div class="flex p-6 fixed z-10 bottom-0 justify-center w-full search">
+			<div class="flex p-6 fixed z-10 bottom-0 justify-center w-full search mobile:hidden">
 				<Search />
+			</div>
+			<div class="p-6 fixed z-10 bottom-0 justify-center w-full search hidden mobile:flex">
+				<MobileSearch />
 			</div>
 		</div>
 	{/if}
