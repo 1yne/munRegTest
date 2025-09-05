@@ -11,6 +11,7 @@
 	import Search from '$lib/components/Search.svelte';
 	import MobileSearch from '$lib/components/MobileSearch.svelte';
 	import Cursor from '$lib/components/Cursor.svelte';
+	import { store } from '$lib/stores/store';
 
 	let loading: boolean = $state(true);
 
@@ -45,7 +46,7 @@
 	{:else}
 		<div class="content h-full" transition:fly={{ y: 40, duration: 500, delay: 300 }}>
 			<Navbar />
-			<div class="h-full">{@render children()}</div>
+			<div class={`h-full transition-all ${$store.searchHover ? "blur" : ""}`}>{@render children()}</div>
 			<div class="flex p-6 fixed z-10 bottom-0 justify-center w-full search mobile:hidden">
 				<Search />
 			</div>
@@ -60,5 +61,8 @@
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 	.search {
 		background-image: linear-gradient(transparent, black);
+	}
+	.blur {
+		filter: blur(40px);
 	}
 </style>
