@@ -3,20 +3,19 @@
 	import { fly } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import { backInOut } from 'svelte/easing';
-
-	let active = $state(false),
-		hover = $state(false);
+	import { clickOutside } from "svelte-outside"
+	import { store } from '$lib/stores/store';
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div>
 	<button
-		class="flex h-12 w-12 hover:w-[calc(100vw-4rem)] hover:h-48 flex-col items-left justify-center gap-4 rounded-3xl border border-white/50 bg-black/75 hover:px-6 py-4 transition-all hover:border-white"
-		onmouseenter={() => (hover = true)}
-		onmouseleave={() => (hover = false)}
+		class={`flex ${$store.searchHover ? "h-48 w-[calc(100vw-4rem)] px-6" : "h-12 w-12"} flex-col items-left justify-center gap-4 rounded-3xl border border-white/50 bg-black/75 py-4 transition-all hover:border-white`}
+		onclick={() => ($store.searchHover = true)}
+		use:clickOutside={() => $store.searchHover = false}
 	>
-		{#if hover}
+		{#if $store.searchHover}
 			<a
 				href="/committees"
 				in:fly={{ y: 40, duration: 750, easing: backInOut }}
@@ -38,7 +37,7 @@
 			>
 		{:else}
 			<div in:fly={{ delay: 150, y: 40, easing: backInOut }} class="w-full flex justify-center h-4">
-				<Menu class={`text-white/50 transition-all ${hover || active ? '!text-[#d60202]' : ''}`} />
+				<Menu class={`text-white/50 transition-all ${$store.searchHover ? '!text-[#d60202]' : ''}`} />
 			</div>
 		{/if}
 	</button>
