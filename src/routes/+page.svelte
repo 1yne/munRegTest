@@ -4,8 +4,8 @@
 			RoMUN 2025
 		</h1>
 		<div class="hidden w-full nyghtSerif leading-none mobile:block">
-			<h1 class="text-[vw]">RoMUN</h1>
-			<h1 class="text-[vw]">2025</h1>
+			<h1 class="text-[24vw]">RoMUN</h1>
+			<h1 class="text-[24vw]">2025</h1>
 		</div>
 		<div class="flex w-full justify-between">
 			<h2 class="font-montserrat text-lg mobile:text-sm">10-11 October 2025</h2>
