@@ -1,11 +1,11 @@
 <div class="h-full">
 	<div class="flex h-1/2 flex-col justify-between p-12 pt-20 text-black mobile:p-6 mobile:pt-20">
-		<h1 class="flex justify-center nyghtSerif leading-none mobile:hidden text-[15.4cqw]">
+		<h1 class="flex justify-center nyghtSerif leading-none mobile:hidden text-[15.4vw]">
 			RoMUN 2025
 		</h1>
 		<div class="hidden w-full nyghtSerif leading-none mobile:block">
-			<h1 class="text-[24cqw]">RoMUN</h1>
-			<h1 class="text-[24cqw]">2025</h1>
+			<h1 class="text-[vw]">RoMUN</h1>
+			<h1 class="text-[vw]">2025</h1>
 		</div>
 		<div class="flex w-full justify-between">
 			<h2 class="font-montserrat text-lg mobile:text-sm">10-11 October 2025</h2>

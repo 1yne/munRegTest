@@ -19,7 +19,7 @@
 	</div>
 	<div class="flex w-1/2 flex-col justify-between px-12 py-12 pt-20 mobile:w-full mobile:p-6 mobile:pb-16 bg-offWhite">
 		<div>
-			<h1 class="nyghtSerif text-[14cqw] leading-[0.75] text-black mobile:text-[18cqw]">
+			<h1 class="nyghtSerif text-[14vw] leading-[0.75] text-black mobile:text-[18vw]">
 				{committeeData.name}
 			</h1>
 			<p class="mt-8 mobile:my-4 font-montserrat uppercase text-black mobile:text-md">{committeeData.full}</p>
