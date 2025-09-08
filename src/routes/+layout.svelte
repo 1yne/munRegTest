@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.css';
 	import '$lib/styles/main.css';
-	import { ModeWatcher } from 'mode-watcher';
 	let { children } = $props();
 	import { onNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
@@ -33,7 +32,6 @@
 	});
 </script>
 
-<ModeWatcher />
 <Cursor />
 <div class="h-screen w-full bg-offWhite">
 	{#if loading}
